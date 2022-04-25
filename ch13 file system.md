@@ -27,11 +27,11 @@
 
 如果将文件放入一个房间中，整个房间都是堆积的文件
 
-<center><img src="images/ch13 file system/pexels-photo-6571015-1.jpg" alt="pexels-照片-6571015-1" style="zoom:40%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/pexels-photo-6571015-1.jpg" alt="pexels-照片-6571015-1" style="zoom:40%;" /></center>
 
 有了文件系统的存在将会改变一切
 
-<center><img src="images/ch13 file system/pexels-photo-6571015-2.jpg" alt="pexels-照片-6571015-2" style="zoom:40%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/pexels-photo-6571015-2.jpg" alt="pexels-照片-6571015-2" style="zoom:40%;" /></center>
 
 空间管理、元数据、数据加密、文件访问控制和数据完整性等等都是文件系统的职责。
 
@@ -69,7 +69,7 @@ close(f);
 - 一个打开文件描述符是这个表中的索引
 - 描述符由唯一的非负整数表示，例如 0、12 或 567。系统上每个打开的文件至少存在一个文件描述符
 
-![~replace~https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png](images/ch13 file system/file-descriptor.jpg)
+![~replace~https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/file-descriptor.jpg)
 
 如果对文件需要更好的管理，就需要元数据来管理打开文件:
 
@@ -162,7 +162,7 @@ UNIX模式：
 
 - 层次名称空间：
 
-  - <left><img src="images/ch13 file system/image-20220422230459824.png" alt="image-20220422230459824" style="zoom:55%;" /></left>
+  - <left><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/image-20220422230459824.png" alt="image-20220422230459824" style="zoom:55%;" /></left>
 
 
 
@@ -186,19 +186,19 @@ UNIX模式：
 
 单级目录 `Single-Level Directory`；单级目录理解起来比较简单，单级目录中所有文件都包含在同一目录中，必须具有唯一的名称
 
-![img](images/ch13 file system/11_09_SingleLevel.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/11_09_SingleLevel.jpg)
 
 #### 两级目录
 
 两级目录 `Two-Level Directory`；两级目录通常为不同用户的自己的目录 User File Director UDF，文件名只需在指定目录下唯一即可。
 
-![img](images/ch13 file system/11_10_TwoLevelStructure.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/11_10_TwoLevelStructure.jpg)
 
 #### 树形目录
 
 树形目录 `Tree-Structured Directories`；通常是指深度大于**2**的目录，在此结构中，每个文件都有一个唯一的路径
 
-![img](images/ch13 file system/11_11_TreeStructure.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/11_11_TreeStructure.jpg)
 
 #### 文件别名
 
@@ -215,7 +215,7 @@ UNIX模式：
 
 >  Windows中仅支持符号链接，称为快捷方式
 
-![img](images/ch13 file system/11_12_AcyclicGraph.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/11_12_AcyclicGraph.jpg)
 
 ##### 通用图目录
 
@@ -224,13 +224,13 @@ UNIX模式：
 通用图目录比其他类型目录更佳灵活，最大问题是计算大小时的难度。通用图目录实现常见的是通过线性列表或哈希表：
 
 - 线性列表：将所有文件保存在一个目录中，类似一个单链表。每个文件都包含一个数据块指向指针和目录中的下一个文件。
-  - ![操作系统中的目录结构](images/ch13 file system/image-129.png)
+  - ![操作系统中的目录结构](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/image-129.png)
 - 哈希表：目录中对于每个文件，都会生成一个键值对，将其存入哈希表中。借助文件名的哈希函数，我们可以确定存储在目录中的各个文件 key 和其指针 `key points`
-  - ![操作系统中的目录结构](images/ch13 file system/image-130.png)
+  - ![操作系统中的目录结构](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/image-130.png)
 
 图：通用图目录结构
 
-![img](images/ch13 file system/11_13_GeneralGraph.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/11_13_GeneralGraph.jpg)
 
 
 
@@ -243,7 +243,7 @@ UNIX模式：
 - 一个文件系统需要先挂载才能被访问
 - 一个未挂载的文件系统被挂载在挂载点上
 
-![img](images/ch13 file system/11_14_MountVolumes.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/11_14_MountVolumes.jpg)
 
 
 
@@ -298,7 +298,7 @@ Linux中虚拟文件系统的对象类型：
 
 ## 打开文件的数据结构
 
-<center><img src="images/ch13 file system/12_03_FileSystemStructures.jpg" alt="img" style="zoom:90%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/12_03_FileSystemStructures.jpg" alt="img" style="zoom:90%;" /></center>
 
 <center>内存中文件系统结构。(a) 文件打开 &nbsp;&nbsp;&nbsp;(b) 文件读取</center>
 
@@ -368,7 +368,7 @@ Linux中虚拟文件系统的对象类型：
 
   - 如果一个文件初始分配大小很大，并长期没有写入，在文件填满时，很多空间将变得不可用
 
-![img](images/ch13 file system/12_05_ContiguousAllocation.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/12_05_ContiguousAllocation.jpg)
 
 ### 链式分配
 
@@ -383,7 +383,7 @@ Linux中虚拟文件系统的对象类型：
 - 无法实现高效的随机访问；链式访问仅可以串行访问文件，必须从每个位置的列表头开始
 - 可靠性：指针丢失或损坏
 
-![img](images/ch13 file system/12_06_LinkedAllocation.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/12_06_LinkedAllocation.jpg)
 
 ### 索引分配
 
@@ -402,13 +402,13 @@ Linux中虚拟文件系统的对象类型：
 - 多级索引 `Multi-Level Index`：类似于多级页表，第一个索引块包含一组指向二级索引块的指针，而二级索引块又包含指向实际数据块的指针
 - 联合模式 `Combined Scheme`：
 
-<center><img src="images/ch13 file system/12_08_IndexedAllocation.jpg" alt="img" style="zoom:80%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/12_08_IndexedAllocation.jpg" alt="img" style="zoom:80%;" /></center>
 
 <center>图：索引分配</center>
 
 
 
-<center><img src="images/ch13 file system/chp11_11.png" alt="Figure 11.11" style="zoom:80%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/chp11_11.png" alt="Figure 11.11" style="zoom:80%;" /></center>
 
 <center>图：多级索引</center>
 
@@ -420,7 +420,7 @@ Linux中虚拟文件系统的对象类型：
 
 空闲空间管理只是磁盘管理中，需要追踪和分配对空闲空间部分的管理，对于空闲空间的管理的表现是位图 `bitmap`；即通过位向量来标记数据块的使用情况
 
-![image-20220425184448442](images/ch13 file system/image-20220425184448442.png)
+![image-20220425184448442](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/image-20220425184448442.png)
 
 **其他管理空闲空间的方式**：
 
@@ -455,13 +455,13 @@ RAID控制器分为软RAID和硬RAID
 
 RAID0（无容错的条带化磁盘阵列），是将数据体划分为块并将数据块分布在独立磁盘冗余阵列中的多个存储设备中，但不提供容错。
 
-![RAID 0](images/ch13 file system/8b11.png)
+![RAID 0](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/8b11.png)
 
 ####  RAID1
 
 RAID1又称为磁盘镜像 `mirroring`，将数据复制到两个或更多磁盘，由至少两个数据存储驱动器组成，读性能提升，写性能与单磁盘相同。RAID1提供了全面的数据保护
 
-![RAID 1](images/ch13 file system/8b111.png)
+![RAID 1](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/8b111.png)
 
 
 
@@ -469,13 +469,13 @@ RAID1又称为磁盘镜像 `mirroring`，将数据复制到两个或更多磁盘
 
 RAID0（基于奇偶校验块的条带化磁盘阵列）；它使用类似于 RAID0 的分布式数据存储，但通过包含写入不同阵列磁盘的冗余信息（奇偶校验码）来提高数据存储的可靠性。RAID 5 至少需要三个磁盘，但出于性能原因，通常建议使用至少五个磁盘。
 
-![RAID 5](images/ch13 file system/8b115.png)
+![RAID 5](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/8b115.png)
 
 #### RAID 10
 
 RAID 0+1是结合 RAID 1 和 RAID 0的一种模式，通常称为 RAID 10；RAID10需要至少四个磁盘；通过跨镜像的条带化保存数据，只要每个镜像对中的一个磁盘正常，那么数据就正常
 
-![raid10](images/ch13 file system/raid10-165089735841849.png)
+![raid10](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/raid10-165089735841849.png)
 
 ## 磁盘调度
 
@@ -483,7 +483,7 @@ RAID 0+1是结合 RAID 1 和 RAID 0的一种模式，通常称为 RAID 10；RAID
 
 在传统磁盘中由多个盘面组成，每个盘面被臂组件上的磁盘头来通过旋转读取，通过所希望的扇区开始
 
-<img src="images/ch13 file system/10_01_DiskMechanism.jpg" alt="img" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/10_01_DiskMechanism.jpg" alt="img" style="zoom:80%;" />
 
 在操作中，磁盘会告诉旋转例如 7200RPM（`revolutions per minute`）（实际读写速度120 MB/s ）。数据从磁盘传输到计算机的速率由几个步骤组成：
 
@@ -510,7 +510,7 @@ $access\ time=SK+RL+TR$
 
 
 
-![image-20220425225845651](images/ch13 file system/image-20220425225845651.png)
+![image-20220425225845651](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/image-20220425225845651.png)
 
 如：$T_s = 2ms$，$r=10000rpm$，512B扇区大小，每轨320个扇区， 1.3 MB的文件大小
 
@@ -565,7 +565,7 @@ $access\ time=SK+RL+TR$
 - 公平对待所有进程
 - 在有很多进程的情况下，接近随机调度的性能
 
-![img](images/ch13 file system/10_04_FCFS.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/10_04_FCFS.jpg)
 
 可以看到柱面 cylinder从122 到 14 在回到124摆动很巨大：
 
@@ -577,7 +577,7 @@ $access\ time=SK+RL+TR$
 - 总是选择最短寻道时间
 - 可能会导致饥饿
 
-![img](images/ch13 file system/10_05_SSTF.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/10_05_SSTF.jpg)
 
 由图可以看出相同的情况下**SSTF**将柱面移动数减少到 236 个柱面，低于**FCFS **所需的 640 个柱面。
 
@@ -585,19 +585,19 @@ $access\ time=SK+RL+TR$
 
 **SCAN**算法，又称**电梯**算法，磁臂在一个方向上移动，满足所有为完成的请求，直到磁臂到达该方向上最后的磁道，类似于在高层建筑中处理请求的电梯。
 
-![img](images/ch13 file system/10_06_SCAN.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/10_06_SCAN.jpg)
 
 #### C-SCAN
 
 `Circular-SCAN`，通过循环队列方式来改进 SCAN ：一旦磁臂到达磁盘的末端，它会返回到另一端而不处理任何请求，然后从磁盘的开头重新开始：
 
-![img](images/ch13 file system/10_07_C_SCAN.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/10_07_C_SCAN.jpg)
 
 #### LOOK
 
 LOOK是通过待处理请求的队列来改进SCAN，而不是磁盘序列，并且不会将磁头移向磁盘末端的距离超过必要的位置。
 
-![img](images/ch13 file system/10_08_C_LOOK.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/10_08_C_LOOK.jpg)
 
 #### N-Step LOOK or N-Step-SCAN
 
@@ -614,7 +614,7 @@ N-Step-SCAN是将请求队列分为成长度为*N*的子队列，使用SCAN算�
 - 4 = {143, 18}
 - 5 = {67}
 
-![N-Step-SCAN 磁盘调度算法](images/ch13 file system/AVvXsEiN9sTBRQ3sa6KrvuvTIMi8QPoZAZKzlTwpeM4zWygJWe3eIaB1LO2NURSuSDt4wcTxXWS-prJkOjObzkqrxYWGCFO026xce3y12cSXtLrJwoBDihvdDlxCAl2FYPtiK-lyUDgBvTeCNyaGMYkQq6kD4261F0Hp09TVn9uOOYorv_UdZCGpoDpp4pQa=s16000.png)
+![N-Step-SCAN 磁盘调度算法](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/AVvXsEiN9sTBRQ3sa6KrvuvTIMi8QPoZAZKzlTwpeM4zWygJWe3eIaB1LO2NURSuSDt4wcTxXWS-prJkOjObzkqrxYWGCFO026xce3y12cSXtLrJwoBDihvdDlxCAl2FYPtiK-lyUDgBvTeCNyaGMYkQq6kD4261F0Hp09TVn9uOOYorv_UdZCGpoDpp4pQa=s16000.png)
 
 `N-step-SCAN` 磁盘调度算法的吞吐量高，平均响应时间低。
 
@@ -626,4 +626,4 @@ N-Step-SCAN是将请求队列分为成长度为*N*的子队列，使用SCAN算�
 
 FSCAN `Fixed period SCAN`，是 `N-step-SCAN` 的简化版本，FSCAN将磁盘请求队列分成两个子队列，一个是由当前所有请求磁盘I/O的进程所形成的队列，由磁盘调度按SCAN算法进行处理，在扫描期间，将新出现的请求磁盘I/O的进程放入另一个等待处理的请求队列。这样，所有的新请求都被推迟到下一次扫描时处理。
 
-![img](images/ch13 file system/finalFSCAN.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch13 file system/finalFSCAN.jpg)

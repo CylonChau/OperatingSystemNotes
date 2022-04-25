@@ -329,7 +329,7 @@ func thread2() {
 
 如果不对 `favouredthread == counterpart` 进行判断，那么就会出现饥饿现象。
 
-![image-20220412232216377](images/ch9 Synchronization/image-20220412232216377.png)
+![image-20220412232216377](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch9 Synchronization/image-20220412232216377.png)
 
 > Reference
 >
@@ -483,7 +483,7 @@ if __name__ == "__main__":
     b.main()
 ```
 
-![image-20220413171749388](images/ch9 Synchronization/image-20220413171749388.png)
+![image-20220413171749388](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch9 Synchronization/image-20220413171749388.png)
 
 - 互斥：有没有可能2个以上进程同时进临界区
   - 最小的id才可进入临界区

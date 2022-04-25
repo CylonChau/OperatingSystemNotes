@@ -36,7 +36,7 @@ Root是常驻内存，因为其需要调用A B C D E F G 六个模块，占用2K
 
 
 
-![img](images/ch5%20Virtual%20Memory/os_overlaymemory-164128439798517.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch5%20Virtual%20Memory/os_overlaymemory-164128439798517.png)
 
 如图：加载与运行改程序所需的物理内存大小是多少？
 
@@ -59,7 +59,7 @@ Root+C+G = 2KB + 8KB + 4KB = 14KB
 
  
 
-![Concepts of overlays](images/ch5%20Virtual%20Memory/Concepts-of-overlays-164128440033218.png)
+![Concepts of overlays](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch5%20Virtual%20Memory/Concepts-of-overlays-164128440033218.png)
 
 如图所示，`Overlay Driver` ,也就是root区，是一个由用户负责如何覆盖的代码段，并不是操作系统提供的功能。这就意味着Overlay模式下需要用户自行去管理内存，这就是所谓的`Overlay Driver`，通俗来讲，`Overlay Driver` 是帮助整个程序如何换入换出各个部分的代码。
 
@@ -86,7 +86,7 @@ Root+C+G = 2KB + 8KB + 4KB = 14KB
 
 实现原理：可将暂时不能运行的程序送到外存，从而获得空闲内存空间。操作系统把一个进程的整个地址空间的内容保存到外存中(换出 swap out)，而将外存中的某个进程的地址空间读入到内存中(换入 swap in)。换入换出内容的大小为整个程序的地址空间。
 
-![交换](images/ch5 Virtual Memory/Swapping.jpg)
+![交换](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch5 Virtual Memory/Swapping.jpg)
 
 ### 交换技术存在的问题
 
@@ -113,7 +113,7 @@ Root+C+G = 2KB + 8KB + 4KB = 14KB
 
   像交换技术那样，能够实现进程在内存与外存之间的交换，因而获得更多的空闲内存空间。但做的更好，只对进程的部分内容在内存和外存之间进行交换。
 
-![虚拟内存](images/ch5 Virtual Memory/virtual_memory.jpg)
+![虚拟内存](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch5 Virtual Memory/virtual_memory.jpg)
 
 ### 程序局部性原理
 
@@ -190,7 +190,7 @@ option #2 总共会发生1024次 `page fault`
 
 为了能够实现请求调页和页面置换，需要在页表项中增加一些位(`bit`)，来辅助完成该功能。
 
-![image-20220320174819945](images/ch5 Virtual Memory/image-20220320174819945.png)
+![image-20220320174819945](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch5 Virtual Memory/image-20220320174819945.png)
 
 访问位或引用位（`Reference bit`）：如果该页被访问过(包括读写操作)，则设置此位，用于页面置换算法。
 
@@ -218,7 +218,7 @@ option #2 总共会发生1024次 `page fault`
 
 - Physical memory pages: 8 
 
-![image-20220320175528794](images/ch5 Virtual Memory/image-20220320175528794.png)
+![image-20220320175528794](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch5 Virtual Memory/image-20220320175528794.png)
 
 当虚拟内存页第一项为2，那么代表物理页帧为2的项，公式则为 $vmItme \times page size= 2\times4069=8192$
 
@@ -230,7 +230,7 @@ option #2 总共会发生1024次 `page fault`
 
 #### 内存管理中的处理流程
 
-![image-20220320180502614](images/ch5 Virtual Memory/image-20220320180502614.png)
+![image-20220320180502614](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch5 Virtual Memory/image-20220320180502614.png)
 
 由图可知：
 

@@ -6,7 +6,7 @@
 
 死锁的示例：交通桥
 
-![死锁示例](images/ch11 deadlock/122319_0715_Introductio1.png)
+![死锁示例](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/122319_0715_Introductio1.png)
 
 如图所示，桥是资源，进程是车辆，两个不同方向的车辆同时占用桥，此时发生谁也过不去的情况（死锁的发生）；
 
@@ -40,14 +40,14 @@
 
 | 类型                                                         | 示意图                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Process                                                      | ![image-20220417173948923](images/ch11 deadlock/image-20220417173948923.png) |
-| Resource                                                     | ![image-20220417174015953](images/ch11 deadlock/image-20220417174015953.png) |
-| $P_i$ 请求的 $R_j$ 实例                                      | ![image-20220417174158072](images/ch11 deadlock/image-20220417174158072.png) |
-| $P_i$ 持有一个 $R_j$ 的实例<br>也可以说 $R_j$ 被 $P_i$ 所持有 | ![image-20220417174238047](images/ch11 deadlock/image-20220417174238047.png) |
+| Process                                                      | ![image-20220417173948923](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/image-20220417173948923.png) |
+| Resource                                                     | ![image-20220417174015953](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/image-20220417174015953.png) |
+| $P_i$ 请求的 $R_j$ 实例                                      | ![image-20220417174158072](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/image-20220417174158072.png) |
+| $P_i$ 持有一个 $R_j$ 的实例<br>也可以说 $R_j$ 被 $P_i$ 所持有 | ![image-20220417174238047](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/image-20220417174238047.png) |
 
 ### 资源分配图
 
-<center><img src="images/ch11 deadlock/7_01_ResourceAllocation.jpg" alt="img" style="zoom:100%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/7_01_ResourceAllocation.jpg" alt="img" style="zoom:100%;" /></center>
 
 <center>资源分配图</center>
 
@@ -65,7 +65,7 @@
 
 资源分配图不包含循环，则不会死锁；如果有向图为环形，则为死锁，例如
 
-<center><img src="images/ch11 deadlock/image-20220417175945207.png" alt="image-20220417175945207" style="zoom:80%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/image-20220417175945207.png" alt="image-20220417175945207" style="zoom:80%;" /></center>
 <center>环形有向图</center>
 
 死锁示意图资源类型为：
@@ -85,7 +85,7 @@
 
 ### 有环但无死锁
 
-<center><img src="images/ch11 deadlock/7_03_CycleNoDeadlock.jpg" alt="img" style="zoom:1-0%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/7_03_CycleNoDeadlock.jpg" alt="img" style="zoom:1-0%;" /></center>
 
 <center>有环但无死锁</center>
 
@@ -161,7 +161,7 @@
 
 - 当 $i>j$ 时，$P_i$ 要求的资源能够由 $当前可用的资源+所有的\ P_j\ 持有的资源$ 来满足；如果 $P_i$ 完成了并释放了所有资源，那么 $P_j$ 也能够完成
 
-<center><img src="images/ch11 deadlock/7_06_StateSpaces.jpg" alt="img" style="zoom:100%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/7_06_StateSpaces.jpg" alt="img" style="zoom:100%;" /></center>
 
 如图所示：如果不存在安全序列，则系统处于不安全状态，这**可能**会导致死锁。（所有安全状态都是无死锁的，但并非所有不安全状态都会导致死锁。）
 
@@ -196,11 +196,11 @@
 - 进程在请求资源会从 `claim edge` 转为 `request edge`
 - 进程释放资源会从 `assignment edge` 转为  `claim edge` 
 
-<center><img src="images/ch11 deadlock/7_07_DeadlockAvoidance.jpg" alt="img" style="zoom:100%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/7_07_DeadlockAvoidance.jpg" alt="img" style="zoom:100%;" /></center>
 
 此方法的工作原理是，拒绝会在资源分配图中产生循环的请求，从而使声明边缘生效
 
-<center><img src="images/ch11 deadlock/7_08_UnsafeState.jpg" alt="img" style="zoom:100%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/7_08_UnsafeState.jpg" alt="img" style="zoom:100%;" /></center>
 
 <center>图：当生成的资源分配中会形成一个循环，此资源申请无法授予</center>
 
@@ -311,7 +311,7 @@ https://angom.myweb.cs.uwindsor.ca/teaching/cs330/ch7.pdf
 
 
 
-<center><img src="images/ch11 deadlock/7_09_TwoGraphs.jpg" alt="img" style="zoom:80%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch11 deadlock/7_09_TwoGraphs.jpg" alt="img" style="zoom:80%;" /></center>
 
 <center>(a) 资源分配图&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 进程等待图</center>
 

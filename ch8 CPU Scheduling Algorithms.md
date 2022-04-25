@@ -123,7 +123,7 @@
 
 那么对应的甘特图是：
 
-<img src="images/ch8 CPU scheduling algorithms/image-20220406190723836.png" alt="image-20220406190723836" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU scheduling algorithms/image-20220406190723836.png" alt="image-20220406190723836" style="zoom:80%;" />
 那么衡量指标的信息如：
 
 - 等待时间WT为：P1=0；P2=24；P3=27
@@ -141,7 +141,7 @@
 
 例如假设执行顺序按照：P<sub>2</sub> , P<sub>3</sub>, P<sub>1</sub>，那么整个的执行队列如下图
 
-<img src="images/ch8 CPU scheduling algorithms/image-20220406192925398.png" alt="image-20220406192925398" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU scheduling algorithms/image-20220406192925398.png" alt="image-20220406192925398" style="zoom:80%;" />
 
 此时平局等待时间WT为： P<sub>1</sub> = 6;P<sub>2</sub> = 0; P<sub>3</sub> = 3
 
@@ -235,7 +235,7 @@ gantt
 
 - $\tau_{n+1} = \alpha t_n+(1-\alpha)\tau_{n-1} + (1-\alpha)^2\tau_{n-2}....(1-\alpha)^j\tau_{n+1}$
 
-![image-20220406235249748](images/ch8 CPU scheduling algorithms/image-20220406235249748.png)
+![image-20220406235249748](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU scheduling algorithms/image-20220406235249748.png)
 
 > **实例题：$\tau_1=10$，$\alpha=5$，之前执行的队列为8,7,4,16，接下来预估值是多少？**
 >
@@ -314,7 +314,7 @@ HRRN是综合考虑了执行时间和等待时间，如：假设有三个进程�
 
 这个队列的执行甘特图就如下：
 
-![image-20220408185457559](images/ch8 CPU Scheduling Algorithms/image-20220408185457559.png)
+![image-20220408185457559](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/image-20220408185457559.png)
 
 平均等待时间：$AWT=(0+1+14+3+6)\div5 = 24\div5=4.8$
 
@@ -383,7 +383,7 @@ gantt
 - q较小时，上下文切换此时很多，所以q需要设置的较大些
 - 通常情况下，平均周转率要优于SJF，也不会出现饥饿状态
 
-![image-20220409171756385](images/ch8 CPU Scheduling Algorithms/image-20220409171756385.png)
+![image-20220409171756385](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/image-20220409171756385.png)
 
 ##### RR的特点
 
@@ -434,7 +434,7 @@ gantt
 - 当时间片没结束（发生CPU上下文切换是I/O事件）则提高优先级，直到最高优先级队列
 - CPU密集型的优先级下降，I/O密集型的优先级上升
 
-![多级反馈队列调度](images/ch8 CPU Scheduling Algorithms/1606975413-71449.png)
+![多级反馈队列调度](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/1606975413-71449.png)
 
 #### 公平共享调度
 
@@ -454,7 +454,7 @@ gantt
 - 马，每20分钟喂养一次，一次需要10分钟
 - 奶牛，每50分钟喂养一次，每次25分钟
 
-![image-20220409193117791](images/ch8 CPU Scheduling Algorithms/image-20220409193117791.png)
+![image-20220409193117791](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/image-20220409193117791.png)
 
 - 如果使用rr，第一次喂马10分钟，第二次喂牛25分钟，第三次喂马，此时喂养时间不够，马死了
 - 使用固定时间片喂养的话，喂马10分钟，喂牛10分钟，牛喂养时间不足，牛死了
@@ -465,7 +465,7 @@ gantt
   - 第四次，喂牛15分钟，此时时间为45，满足牛和马的喂养时间，使用EDF，可以保障到牛和马都不会死
 
 
-![image-20220409194038911](images/ch8 CPU Scheduling Algorithms/image-20220409194038911.png)
+![image-20220409194038911](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/image-20220409194038911.png)
 
 
 
@@ -489,7 +489,7 @@ gantt
 - $f_j$：**Finishing Time**，进程完成执行的时间
 - $R_j$：**Response time**，作业到达后执行时间的长度，$R_j=f_j-a_j$
 
-![image-20220409194849293](images/ch8 CPU Scheduling Algorithms/image-20220409194849293.png)
+![image-20220409194849293](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/image-20220409194849293.png)
 
 #### 实时系统要求
 
@@ -513,7 +513,7 @@ gantt
 
 那么其执行甘特图如下
 
-![image-20220409202939904](images/ch8 CPU Scheduling Algorithms/image-20220409202939904.png)
+![image-20220409202939904](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/image-20220409202939904.png)
 
 **EDF特点**：
 
@@ -531,7 +531,7 @@ $T_i$ ：周期任务
 - t2 =  (2, 8, 8), 
 - t3 = (4, 12, 12)
 
-![image-20220409202922051](images/ch8 CPU Scheduling Algorithms/image-20220409202922051.png)
+![image-20220409202922051](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/image-20220409202922051.png)
 
 **RM特点**：
 
@@ -587,22 +587,22 @@ $T_i$ ：周期任务
 
 如图所示：高优先级任务与低优先级任务共享资源时。当低优先级任务锁定资源时，高优先级任务必须等待，即使高优先级任务有资格运行。
 
-<img src="images/ch8 CPU Scheduling Algorithms/1606.jpg" alt="点击展开" style="zoom:130%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/1606.jpg" alt="点击展开" style="zoom:130%;" />
 
 如图所示，LP任务使用对共享资源加锁，t2时间HP发生抢占，此时因为LP没有对锁释放，HP处于阻塞状态，而MP发生抢占直到t5结束，此时CPU回到LP任务，直到t6结束，释放锁，此时HP才开始执行，即使HP处于高优先级也不会被执行。
 
-<img src="images/ch8 CPU Scheduling Algorithms/1607.jpg" alt="点击展开" style="zoom:130%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/1607.jpg" alt="点击展开" style="zoom:130%;" />
 
 解决的方法：
 
 - 优先级继承 **Priority Inheritance**
   - 低优先级任务持有高优先级请求的资源，则低优先级任务将提高到与高优先级任务相同的优先级
-    - <img src="images/ch8 CPU Scheduling Algorithms/1608.jpg" alt="点击展开" style="zoom:120%;" />
-    - ![点击展开](images/ch8 CPU Scheduling Algorithms/1609.jpg)
+    - <img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/1608.jpg" alt="点击展开" style="zoom:120%;" />
+    - ![点击展开](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/1609.jpg)
     - 如图所示：具有不同优先级的三个任务共享一个资源。LP首先在时间 t1 获取资源。在t2，MP抢占 LP到 t3，当MP它需要资源时。MP被阻止。此时，LP 提升优先级同MP并恢复执行。HP在 t4抢占 LP 任务。当 HP 访问共享资源时，在 t5 被阻止。此时LP 从 HP 继承其优先级并恢复执行。一旦 LP 完成，它的优先级立即降低到最初分配的级别。
 - 优先级天花板 **Priority ceiling** 
   - 优先级天花板中，每个任务的优先级都是已知的。每个任务所需的资源在执行之前也是已知的。任何时候正在运行的任务的当前优先级上限是当时正在使用的所有资源的最高优先级上限。
-  - ![点击展开](images/ch8 CPU Scheduling Algorithms/1610.jpg)
+  - ![点击展开](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch8 CPU Scheduling Algorithms/1610.jpg)
 
 > Reference
 >

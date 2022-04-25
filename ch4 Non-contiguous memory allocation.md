@@ -68,9 +68,9 @@
 - 符号表 `symbol table`
 - 数组 `arrays`
 
-![image-20211219232723274](images/ch4%20Non-contiguous_memory_allocation/image-20211219232723274-16412841827931.png)
+![image-20211219232723274](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232723274-16412841827931.png)
 
-![image-20211219232741181](images/ch4%20Non-contiguous_memory_allocation/image-20211219232741181-16412841956352.png)
+![image-20211219232741181](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232741181-16412841956352.png)
 
 <center>[segmentation的逻辑视图]</center>
 
@@ -95,7 +95,7 @@
 
 结束物理地址 = base + limit
 
-![image-20211219232755022](images/ch4%20Non-contiguous_memory_allocation/image-20211219232755022-16412842068243.png)
+![image-20211219232755022](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232755022-16412842068243.png)
 
 ## 分页(Paging)
 
@@ -127,7 +127,7 @@
 
 如图所示，物理地址是一个二元组  $(f,d)$，页帧占 $F$ 位，共有 $2^F$ 帧；偏移量 o 占了 $S$ 位（一个帧的大小），共$2^S$ 字节 ，则物理地址 =  $2^S\times f+d$ 。
 
-![image-20211219232803970](images/ch4%20Non-contiguous_memory_allocation/image-20211219232803970-16412842156934.png)
+![image-20211219232803970](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232803970-16412842156934.png)
 
 > **地址计算：16bit的物理地址空间，页帧大小为9bit（512byte）**
 >
@@ -135,7 +135,7 @@
 >   - $S=9$，$F=7$， $f=3$ ，$d=6$ 
 >   - 套用公式得出，$2^9\times3+6 = 1542$
 >
-> ![image-20211219232813003](images/ch4%20Non-contiguous_memory_allocation/image-20211219232813003-16412842188565.png)
+> ![image-20211219232813003](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232813003-16412842188565.png)
 
 ### 页 Page
 
@@ -151,15 +151,15 @@ Page也有两部分组成，页号和页的偏移。**Page number(==p==)** 和 *
 
 如图所示，一个逻辑地址表示为一个二元组 $(p,d)$，页帧占 $P$ 位，共有 $2^P$ 帧；偏移量 o 占了 $S$ 位 (一个页的大小)，共$2^S$ 字节 ，则物理地址 =  $2^S\times p+d$ 。
 
-![image-20211219232823332](./images/ch4Non-contiguous_memory_allocation/image-20211219232823332-16412842301146.png)
+![image-20211219232823332](./https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4Non-contiguous_memory_allocation/image-20211219232823332-16412842301146.png)
 
 #### 页的寻址机制
 
 在图中可以看出，逻辑地址是一个连续的地址空间，并且由一个个Page组成，首先CPU寻址，地址分位两块（一个二元组）$(p,d)$，p作为一个`index` 去查一个`page table` (以页号为索引的值为帧号) ，以index与base（基地址）作为查找项查找对应的f，$f + (f)d$ 就找到了对应的物理地址。
 
-![image-20211219232835340](images/ch4%20Non-contiguous_memory_allocation/image-20211219232835340-16412842404887.png)
+![image-20211219232835340](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232835340-16412842404887.png)
 
-![image-20211219232844391](images/ch4%20Non-contiguous_memory_allocation/image-20211219232844391-16412842422978.png)
+![image-20211219232844391](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232844391-16412842422978.png)
 
 
 
@@ -217,7 +217,7 @@ CPU的内存单元（`MMU`， `memory management unit`）根据程序的page的�
 >
 >16位地址是0\~15，0\~9是页内偏移 `d`, 10~15是页号。
 >
->![image-20211227232825378](images/ch4%20Non-contiguous_memory_allocation/image-20211227232825378-16412842514469.png)
+>![image-20211227232825378](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211227232825378-16412842514469.png)
 
 
 
@@ -247,11 +247,11 @@ CPU的内存单元（`MMU`， `memory management unit`）根据程序的page的�
 
 <center>[未使用页表的情况]</center>
 
-![image-20211220224356302](images/ch4%20Non-contiguous_memory_allocation/image-20211220224356302-164128426198510.png)
+![image-20211220224356302](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211220224356302-164128426198510.png)
 
 <center>[TLB mechanics]</center>
 
-![image-20211220223035884](images/ch4%20Non-contiguous_memory_allocation/image-20211220223035884-164128427175911.png)
+![image-20211220223035884](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211220223035884-164128427175911.png)
 
 如图所示，如果TLB命中，则直接可以获取到物理地址，如果TLS未命中，则同时将内容缓存到CPU中的TLB。
 
@@ -277,9 +277,9 @@ CPU的内存单元（`MMU`， `memory management unit`）根据程序的page的�
 
 
 
-![image-20211220225010394](images/ch4%20Non-contiguous_memory_allocation/image-20211220225010394-164128428376712.png)
+![image-20211220225010394](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211220225010394-164128428376712.png)
 
-![image-20211220233116354](images/ch4%20Non-contiguous_memory_allocation/image-20211220233116354-164128428562713.png)
+![image-20211220233116354](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211220233116354-164128428562713.png)
 
 #### 多级页表计算题
 
@@ -379,13 +379,13 @@ hash table方式的工作流
 
 
 
-![image-20220104161937728](images/ch4%20Non-contiguous_memory_allocation/image-20220104161937728.png)
+![image-20220104161937728](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20220104161937728.png)
 
 
 
 由图可以看出，为了提高效率，可以对hash函数增加一个参数 `pid` ，可以作为输入，来设计一个hash函数，算出对应的frame number。这种可以很好的解决映射的开销。
 
-![image-20211228221115112](images/ch4%20Non-contiguous_memory_allocation/image-20211228221115112-164128430524414.png)
+![image-20211228221115112](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211228221115112-164128430524414.png)
 
 
 
@@ -407,7 +407,7 @@ hash table方式的工作流
 
 如图所示，通过为每个段创建页表，可以减小页表的大小（要实现这一点，需要硬件支持），CPU提供的地址现在将被划分为段号、页号和偏移量。
 
-![img](images/ch4%20Non-contiguous_memory_allocation/Virtualaddresswithsegmentnoandpageno-164128431474015.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/Virtualaddresswithsegmentnoandpageno-164128431474015.png)
 
 
 
@@ -415,6 +415,6 @@ hash table方式的工作流
 
 CPU生成一个逻辑地址分为两部分：段号和段偏移量。段偏移必须小于段限制。偏移量又分为页码和页偏移。要映射页表中的确切页码，请将页码添加到页表库中。带有页帧号+页偏移组成了实际被映射的物理地址。
 
-![os Segmented Paging](images/ch4%20Non-contiguous_memory_allocation/os-segmented-paging2.png)
+![os Segmented Paging](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/os-segmented-paging2.png)
 
 通过只想相同的页表基址，时间进程间的段共享
