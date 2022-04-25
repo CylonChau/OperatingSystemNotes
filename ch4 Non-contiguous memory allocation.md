@@ -151,7 +151,7 @@ Page也有两部分组成，页号和页的偏移。**Page number(==p==)** 和 *
 
 如图所示，一个逻辑地址表示为一个二元组 $(p,d)$，页帧占 $P$ 位，共有 $2^P$ 帧；偏移量 o 占了 $S$ 位 (一个页的大小)，共$2^S$ 字节 ，则物理地址 =  $2^S\times p+d$ 。
 
-![image-20211219232823332](./https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4Non-contiguous_memory_allocation/image-20211219232823332-16412842301146.png)
+![image-20211219232823332](./https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch4%20Non-contiguous_memory_allocation/image-20211219232823332-16412842301146.png)
 
 #### 页的寻址机制
 

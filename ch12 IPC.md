@@ -16,7 +16,7 @@
 
 ### Communications model
 
-<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12 IPC/3_12_CommunicationsModels.jpg" alt="img" style="zoom:100%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12%20IPC/3_12_CommunicationsModels.jpg" alt="img" style="zoom:100%;" /></center>
 
 <center>(a) 消息队列（间接通信） &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 共享内存（直接通信）</center>
 
@@ -55,7 +55,7 @@ IPC背后关键的一点是消息的传递，即一个进程发消息，一个�
 - 链接可以是单向也可以是双向
 - 每个进程可以有多个链接
 
-<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12 IPC/image-20220419222401782.png" alt="img" style="zoom:120%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12%20IPC/image-20220419222401782.png" alt="img" style="zoom:120%;" /></center>
 
 <center>&nbsp;&nbsp;直接通信&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间接通信</center>
 
@@ -107,7 +107,7 @@ IPC背后关键的一点是消息的传递，即一个进程发消息，一个�
 
 管道是用来数据交换的，是进程之间最简单的通讯方式。通过将一个命令的输出，作为另一个命令的输入来实现的
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12 IPC/3_22_PipeFileDescriptors.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12%20IPC/3_22_PipeFileDescriptors.jpg)
 
 ## Message Queue
 
@@ -117,7 +117,7 @@ IPC背后关键的一点是消息的传递，即一个进程发消息，一个�
 - Pipe是数据流，MQ是一个结构化数据
 - MQ和Pipe一样是 Bounded Buffer
 
-![使用消息队列的 IPC](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12 IPC/ipc-using-message-queues.png)
+![使用消息队列的 IPC](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12%20IPC/ipc-using-message-queues.png)
 
 ## Share Memory
 
@@ -136,7 +136,7 @@ IPC背后关键的一点是消息的传递，即一个进程发消息，一个�
 
 如图所示，可以将共享内存映射到两个不同的进程内存段之间
 
-![share memory](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12 IPC/xshared-memory.png.pagespeed.ic.lPvwNQSSC_.webp)
+![share memory](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12%20IPC/xshared-memory.png.pagespeed.ic.lPvwNQSSC_.webp)
 
 ## Other IPC
 
@@ -146,7 +146,7 @@ Socket被定义为通信中的端点，是指一对进程通过网络使用一�
 
 `IP Socket` 是可以用在同一台主机的进程间通讯（通过loopback地址127.0.0.1），但 `UNIX Domain Socket` ，不是使用底层网络协议（不需要打包拆包、计算校验和、维护序号和应答等），所有通信都完全发生在操作系统内核中。通过使用文件系统，是两个进程可以同时打开一个UDS进行通信
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12 IPC/1ekw1o4xE_7ew9kYh6tVkCA.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch12%20IPC/1ekw1o4xE_7ew9kYh6tVkCA.png)
 
 **一些其他的IPC**
 

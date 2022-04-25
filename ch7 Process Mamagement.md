@@ -36,7 +36,7 @@
 3. Data Section
 4. Text Section
 
-<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/image-20220323215907450.png" alt="image-20220323215907450" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/image-20220323215907450.png" alt="image-20220323215907450" style="zoom: 67%;" />
 
 #### Stack
 
@@ -65,11 +65,11 @@ int main(void) {
 
 Stack是一种后进先出 (LIFO) 数据结构，最后一个被推到Stack上的内容就是从顶部弹出的第一个内容。不允许从Stack的中间插入或移除。因此Stack必须至少支持两种操作：`push ` 和  `pop` ；其他操作也是可以，但不是必需的。
 
- ![stack2](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/stack2.gif)
+ ![stack2](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/stack2.gif)
 
 在Linux中，`ulimit -a` 是可以获取和设置用户限制的函数
 
-![image-20220323223534060](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/image-20220323223534060.png)
+![image-20220323223534060](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/image-20220323223534060.png)
 
 #### Heap
 
@@ -88,7 +88,7 @@ Stack是一种后进先出 (LIFO) 数据结构，最后一个被推到Stack上�
 
 由图可以看出 ，当程序释放或释放两个相邻的内存块时，Heap区域会将其合并成一个大块。这样做可以让heap更好地满足未来对大块内存的需求。交叉阴影（彩色块大小的两倍）块说明了对大块内存的请求。
 
-![heap-Demonstration](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/heap-animation.gif)
+![heap-Demonstration](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/heap-animation.gif)
 
 #### data
 
@@ -249,7 +249,7 @@ PCB是进程存在的唯一标准
 - `Not-running`：非运行状态是指，进程正在等待执行
 - `Running`：运行状态是指当前正在运行的状态
 
-![两态过程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/2state.png)
+![两态过程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/2state.png)
 
 如图可以看出，当操作系统创建进程时，会为该进程初始化PCB；当进程被事件打断，操作系统会将该进程从`Running`状态转换到到`Not-running`状态。
 
@@ -264,7 +264,7 @@ PCB是进程存在的唯一标准
 
 
 
-![三态过程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/3statemodel.png)
+![三态过程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/3statemodel.png)
 
 
 
@@ -311,7 +311,7 @@ PCB是进程存在的唯一标准
 
 为了防止这种情况发生，即如果主存中的所有进程都处于阻塞态，操作系统会挂起( `Suspended` ) 处于阻塞态的进程并将其移动到辅存中。这种过程称为交换。所有处于挂起状态的进程都保存在一个队列中，内存被释放。此时，CPU 可以将一些其他进程带入主存。起到更好的利用CPU资源
 
-![具有挂起状态的五态进程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/5state1suspend.png)
+![具有挂起状态的五态进程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/5state1suspend.png)
 
 **六态模型的状态转换**
 
@@ -343,7 +343,7 @@ PCB是进程存在的唯一标准
   - **Ready-Suspend -> Ready**：当处于Ready-Suspend的高优先级进程高于Ready的进程，则操作系统会将其与主存中的较低优先级Ready进程交换。
   - **Blocked-Suspend -> Blocked：**当主存空间足够时, 系统会把一个高优先级Blocked-Suspend进程(系统认为会很快出现所等待的事件)进程转换为Blocked状态
 
-![具有两个挂起状态的五状态进程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/2state2suspended2.png)
+![具有两个挂起状态的五状态进程模型图](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/2state2suspended2.png)
 
 
 
@@ -364,7 +364,7 @@ PCB是进程存在的唯一标准
 - 就绪队列 `Ready queue`： 保存在主存中，短期调度器负责分配CPU时间
 - 等待队列 `Waiting Queue`  或  `Device queues`：当进程发生阻塞事件，即需要I/O，此时进程会从 Ready转换为 Waitting 状态，进程的上下文 `Context`（PCB），都将存储在在等待队列中。
 
-![Process Queue](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/Process-Queue-2.png)
+![Process Queue](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/Process-Queue-2.png)
 
 > Reference
 >
@@ -374,7 +374,7 @@ PCB是进程存在的唯一标准
 
 线程 `Thread` 是进程中的一条执行流程，线程是CPU独立运行的基本单位，由程序计数器（PC），Stack，和一组寄存器组成。Code、File和Data段等可以在不同的线程共享。
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/4_01_ThreadDiagram.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/4_01_ThreadDiagram.jpg)
 
 由上图可以看出，线程的组成比进程要少一些，进程的主要构成是：
 
@@ -462,7 +462,7 @@ PCB是进程存在的唯一标准
 
 在多对一模型是将所有用户线程都映射到同一个内核线程上执行。该进程一次只能运行一个用户线程。
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/many-to-one.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/many-to-one.png)
 
 从图可以看出，一对一模型的特点如下：
 
@@ -475,7 +475,7 @@ PCB是进程存在的唯一标准
 
 在一对一模型中，内核必须提供一个系统调用来创建一个新的内核线程。
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/many-to-many.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/many-to-many.png)
 
 一对一模型的特点：
 
@@ -488,7 +488,7 @@ PCB是进程存在的唯一标准
 
 在多对多模型中，进程将分配了 m 个内核级线程来执行 n 个用户级线程。
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/many-to-many.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/many-to-many.png)
 
 多对多模型的特点：
 
@@ -501,7 +501,7 @@ PCB是进程存在的唯一标准
 
 两级模型（`Two-Level`）是严格意义上的多对多模型，可以为单个用户线程专门一对一绑定内核线程的能力的模型
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/two-level.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/two-level.png)
 
 ### 用户线程缺点
 
@@ -570,7 +570,7 @@ PCB是进程存在的唯一标准
 
 #### 上下文切换的过程
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/what-is-context-switching-in-operating-system-context-switching-flow.png)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/what-is-context-switching-in-operating-system-context-switching-flow.png)
 
 又图可以看出P1占用CPU，P2处于就绪状态。如果发生中断或进程发生 I/O 事件，则 P1将会被换出；在更改 P1 的状态前，会将P1 的上下文保存在寄存器中，并将PC保存到 PCB1。之后，将加载PCB2上下文信息，此时PC从就绪状态转变为运行状态。
 
@@ -628,9 +628,9 @@ int main(void) {
   - PCB会在内核空间内被复制，同时用户空间的代码也会被复制
   - 子进程返回0，父进程返回子进程的PID
 
-<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/image-20220404233414592.png" alt="image-20220404233414592" style="zoom: 80%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/image-20220404233414592.png" alt="image-20220404233414592" style="zoom: 80%;" />
 
-<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/image-20220404233344415.png" alt="image-20220404233344415" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/image-20220404233344415.png" alt="image-20220404233344415" style="zoom:80%;" />
 
 
 
@@ -656,7 +656,7 @@ exec()系列函数用新的用户程序替换当前的进程的地址空间
 - 全局的程序（代码）和常量会被替换为新的程序（代码）和常量
 - 全局变量重置为基于新代码的
 
-![image-20220404233011879](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7 Process/image-20220404233011879.png)
+![image-20220404233011879](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch7%20Process/image-20220404233011879.png)
 
 ### 进程等待与退出
 

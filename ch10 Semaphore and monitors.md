@@ -149,7 +149,7 @@ BoundedBuffer::Withdraw(c){
   - `Signal()` operation(or broadcast() operation)
     - 唤醒等待的进程，需要进程存在
 
-![monitor](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10 Semaphore and Pipe/1f9Az-JtUUhn_BrAQYag6VA.jpeg)
+![monitor](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10%20Semaphore and Pipe/1f9Az-JtUUhn_BrAQYag6VA.jpeg)
 
 
 
@@ -259,7 +259,7 @@ func main() {
 }
 ```
 
-![image-20220414184847152](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10 Semaphore and Pipe/image-20220414184847152.png)
+![image-20220414184847152](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10%20Semaphore and Pipe/image-20220414184847152.png)
 
 > Reference
 >
@@ -446,17 +446,17 @@ func main() {
 
 哲学家就餐问题 `dining philosophers problem`；有五位哲学家，餐厅中间是一张圆桌，但只有五根筷子，每次吃饭需要两根筷子；当哲学家饿了就会拿起离自己最近的两根筷子；如果可以同时拿起离自己最近的两根筷子吃饭，吃完饭后，放下筷子思考。
 
-<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10 Semaphore and Pipe/DIAGRAM-philosopher.jpg" alt="img" style="zoom:100%;" /></center>
+<center><img src="https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10%20Semaphore and Pipe/DIAGRAM-philosopher.jpg" alt="img" style="zoom:100%;" /></center>
 
 #### 如何设计
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10 Semaphore and Pipe/DIAGRAM-philosopher-cycle.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10%20Semaphore and Pipe/DIAGRAM-philosopher-cycle.jpg)
 
 如图所示首先，哲学家们处于的状态 思考------拿筷子------吃饭------放下筷子------思考的状态中变化。
 
 吃就是对临界区的访问，而如何拿筷子才是重点问题，而筷子则是 整个问题中的 **Race Condition**；可以将每根筷子互斥锁保护的共享对象，而在吃饭前，对其左右筷子进行加锁，两把锁都加成功，视为可以吃饭（访问临界区），吃完饭解锁筷子，进行思考
 
-![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10 Semaphore and Pipe/DIAGRAM-philosopher-flow.jpg)
+![img](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10%20Semaphore and Pipe/DIAGRAM-philosopher-flow.jpg)
 
 共享数据有：
 
@@ -712,7 +712,7 @@ func main() {
 
 可以从执行结果看到，同时满足左右筷子都可以拿起的哲学家才可以进程吃
 
-![image-20220416192756283](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10 Semaphore and monitors/image-20220416192756283.png)
+![image-20220416192756283](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch10%20Semaphore and monitors/image-20220416192756283.png)
 
 > Reference
 >
