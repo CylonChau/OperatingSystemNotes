@@ -52,11 +52,11 @@
 
 在该算法中，会**替换在未来最长持续时间内不会使用的页面**。如下图所示有 a b c d e五个页，但是只有四个页帧。此时会产生物理页不够，会产生 `Page Fault`。
 
-![image-20220321222007583](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321222007583.png)
+![image-20220321222007583](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321222007583.png)
 
 前四次因为a b c d 已经存在物理页帧中，故前四次不会产生缺页中断，第5次请求e不在物理页帧，此时会产生`page fault`，发生页面置换。可以看出目前最久不会被访问的页面为d，故将d替换出。
 
-![image-20220321222225824](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321222225824.png)
+![image-20220321222225824](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321222225824.png)
 
 ### 先进先出置换算法
 
@@ -68,21 +68,21 @@ FIFO算法实现起来非常简单。通过对主存储器中的队列来跟踪�
 
 图是FIFO的伪代码
 
-![由 QuickLaTeX.com 渲染](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/quicklatex.com-dbcb178160c7c5f3cc5dff1ce288a146_l3.svg)
+![由 QuickLaTeX.com 渲染](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/quicklatex.com-dbcb178160c7c5f3cc5dff1ce288a146_l3.svg)
 
 >Reference
 >
 >[fifo-page-replacement](https://www.baeldung.com/cs/fifo-page-replacement)
 >
->[page replacement algorithms](https://slideplayer.com/slide/17170897/)
+>[page%20replacement%20algorithms](https://slideplayer.com/slide/17170897/)
 
 实例，0时刻物理页中存放了 a b c d虚拟页，
 
-![image-20220321225453455](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321225453455.png)
+![image-20220321225453455](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321225453455.png)
 
 当时刻为5时，此时e不在物理页帧中，触发 page fault进行页面置换，假设 0 时刻时 入栈顺序为 a-b-c-d，此算法将会把a置换出，把e置换入。后续的换入换出也是按照进入队列顺序进行替换
 
-![image-20220321225600170](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321225600170-16478745692234.png)
+![image-20220321225600170](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321225600170-16478745692234.png)
 
 ### 最近最久未使用页面置换算法
 
@@ -95,11 +95,11 @@ LRU是与OPT近似的一个算法，该算法基于程序的局部性原理，�
 
 实例，0时刻物理页中存放了 a b c d虚拟页，
 
-![image-20220321230813035](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321230813035.png)
+![image-20220321230813035](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321230813035.png)
 
 当访问5时刻时，此时该替换的应该为最久没有被访问的页面，此时c上次访问时间为1，c为最久没有被访问的页面。
 
-![image-20220321230831419](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321230831419.png)
+![image-20220321230831419](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321230831419.png)
 
 ### 时钟页面置换算法
 
@@ -120,15 +120,15 @@ LRU是与OPT近似的一个算法，该算法基于程序的局部性原理，�
 
 时钟指针扫过页面，寻找 `reference bit` = 0 的页面，替换时钟扫过一圈未被引用的页面
 
-![image-20220321234327704](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321234327704.png)
+![image-20220321234327704](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321234327704.png)
 
 实例：0时刻物理页中存放了 a b c d虚拟页，在 1 2 3 4时刻请求时，此时会命中，并且在访问时，将`reference bit` 设置为1，由下图可见
 
-![image-20220321235251072](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321235251072.png)
+![image-20220321235251072](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321235251072.png)
 
 当时刻为5时，触发置换条件，此时时钟所有`reference bit` 都为 1，此时会转到第二圈，由于第一圈全将`reference bit` 设置为0，故，替换的页为 `a`，同时指针指向下个位置
 
-![image-20220321235223407](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220321235223407.png)
+![image-20220321235223407](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220321235223407.png)
 
 ### 二次机会算法
 
@@ -140,7 +140,7 @@ LRU是与OPT近似的一个算法，该算法基于程序的局部性原理，�
   - 如  `drity bit`=1，则将其重置（设置为零）并继续。
   - 如 `drity bit`=0，则置换出该物理帧中的页面。
 
-![image-20220322161003485](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322161003485.png)
+![image-20220322161003485](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322161003485.png)
 
 增加了 `drity bit` 如 drity bit=0，此时仅为读操作，在置换时无需做写入操作。这样也被称作，增强时钟算法 `Enhance Clock`。
 
@@ -148,15 +148,15 @@ LRU是与OPT近似的一个算法，该算法基于程序的局部性原理，�
 
 实例：0时刻物理页中存放了 a b c d虚拟页，在 1 2 3 4时刻请求时，此时会命中，并且在访问时，将`reference bit` 设置为1，并且，区分了读写操作，基于这种方式可以清楚的了解那页可以被置换出。
 
-![image-20220322162430894](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322162430894.png)
+![image-20220322162430894](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322162430894.png)
 
 因为做了写操作，当时刻为4时，a b 的`dirty bit` 都为1。在经过两轮后，将00位的页替换出，同时指针指向下一位，则替换出C，并将指针指向下一位
 
-![image-20220322162834999](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322162834999.png)
+![image-20220322162834999](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322162834999.png)
 
 > Reference
 >
-> [Second Chance Page Replacement Policy](http://www.mathcs.emory.edu/~cheung/Courses/355/Syllabus/9-virtual-mem/SC-replace.html)
+> [Second Chance page%20replacement%20Policy](http://www.mathcs.emory.edu/~cheung/Courses/355/Syllabus/9-virtual-mem/SC-replace.html)
 
 ### 最不常用置换算法
 
@@ -170,7 +170,7 @@ LRU是与OPT近似的一个算法，该算法基于程序的局部性原理，�
 
 > 0 1 2 3 0 1 2 3 0 1 2 3 4 5 6 7
 
-![LFU](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/LFU.png)
+![LFU](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/LFU.png)
 
 Page Fault = $12 \div 16 = 75%$
 
@@ -236,7 +236,7 @@ Belady现象也可以称作Belady异常 `beladys anomaly`，是在操作系统�
 >
 >[why stack-based cache algorithms avoidbeladys-anomaly](https://cs.stackexchange.com/questions/59355/how-do-stack-based-cache-algorithms-avoid-beladys-anomaly)
 >
->[page replacement algorithms](https://www.geeksforgeeks.org/beladys-anomaly-in-page-replacement-algorithms/)
+>[page%20replacement%20algorithms](https://www.geeksforgeeks.org/beladys-anomaly-in-page-replacement-algorithms/)
 
 #### 为什么stack-based算法不会发生belady现象
 
@@ -284,7 +284,7 @@ LRU和FIFO都是先进先出的思路，只不过LRU是针对页面最近访问�
 - $\tau$ 是工作集窗口 `Working-set window`，一个定长页面访问的时间窗口
 - $W(t, \tau )$ 是工作集的大小，即逻辑页的数量.
 
->![image-20220322192606257](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322192606257.png)
+>![image-20220322192606257](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322192606257.png)
 >
 >如果 Example ($\tau = 10$ ):
 >
@@ -301,7 +301,7 @@ LRU和FIFO都是先进先出的思路，只不过LRU是针对页面最近访问�
 
 例如：如图所示：一个请求序列，假设 $\tau = 10$ ，则应该如何计算工作集？
 
-![image-20220322193820089](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322193820089.png)
+![image-20220322193820089](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322193820089.png)
 
 
 
@@ -339,7 +339,7 @@ LRU和FIFO都是先进先出的思路，只不过LRU是针对页面最近访问�
 
 0时刻，被引用的页面为 a d e 此时 工作集窗口为 `{-2, -1, 0}`
 
-![image-20220322215333300](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322215333300.png)
+![image-20220322215333300](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322215333300.png)
 
 时刻1，工作集窗口为 `{-2, -1, 0, 1} `  工作集为`{a c d e}` 
 
@@ -351,7 +351,7 @@ LRU和FIFO都是先进先出的思路，只不过LRU是针对页面最近访问�
 
 时刻7，因d不在工作集窗口内，则将d换出，此时工作集为 {b c d}
 
-![image-20220322215753155](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322215753155.png)
+![image-20220322215753155](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322215753155.png)
 
 ### 缺页率页面置换算法
 
@@ -392,7 +392,7 @@ LRU和FIFO都是先进先出的思路，只不过LRU是针对页面最近访问�
 
 如果当  $t_{current} - t_{last} < 2$，则将缺失的页增加到工作集中
 
-![image-20220322224045359](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322224045359.png)
+![image-20220322224045359](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322224045359.png)
 
 时刻1：产生缺页异常
 
@@ -400,7 +400,7 @@ LRU和FIFO都是先进先出的思路，只不过LRU是针对页面最近访问�
 
 时刻6：产生缺页异常，此时 $t_{current} - t_{last} = 6-4 \leq 2$，此时工作集窗口为{6,5,4}，工作集为 {b,c,d}；此时增加工作集，将e增加到工作集中
 
-![image-20220322224322218](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322224322218.png)
+![image-20220322224322218](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322224322218.png)
 
 > Reference
 >
@@ -423,7 +423,7 @@ LRU和FIFO都是先进先出的思路，只不过LRU是针对页面最近访问�
 
 $\sum WS_i = Size of memory$ 
 
-![image-20220322231054093](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page replacement algorithms/image-20220322231054093.png)
+![image-20220322231054093](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch6%20page%20replacement%20algorithms/image-20220322231054093.png)
 
 
 

@@ -9,7 +9,7 @@
 - CPU，完成程序的执行控制
 - 主存 （`main memory`），放置程序代码和数据
 - I/O（外）设备，配合程序工作。
-   ![image-20220425192206925](images\ch3%20Contiguous memory allocation\image-20220425192206925.png)
+   ![image-20220425192206925](images\ch3%20Contiguous%20memory%20allocation\image-20220425192206925.png)
    2.内存分层体系（金字塔结构)
 
 什么是内存结构：CPU所访问的指令和数据在什么地方。
@@ -22,7 +22,7 @@
 
 操作系统的作用可以将数据访问的速度（cache与内存）与存储的大小（硬盘）很好的融合在一起
 
-![image-20220425192237300](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous memory allocation/image-20220425192237300.png)
+![image-20220425192237300](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous%20memory%20allocation/image-20220425192237300.png)
  3.OS管理内存时需要完成的目标
 
 ① 抽象：逻辑地址空间（将物理内存，外设等抽象成逻辑地址空间，只需要访问对应地址空间)
@@ -32,7 +32,7 @@
 ③ 共享：进程间安全，可靠，有效，进行数据传递，访问相同的内存。
 
 ④ 虚拟化：更多的地址空间（利用磁盘的空间)
-![image-20220425192251895](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous memory allocation/image-20220425192251895.png)
+![image-20220425192251895](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous%20memory%20allocation/image-20220425192251895.png)
 
 
 
@@ -64,7 +64,7 @@
 
    ### 1.内存地址的定义
 
-![image-20220425192335531](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous memory allocation/image-20220425192335531.png)
+![image-20220425192335531](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous%20memory%20allocation/image-20220425192335531.png)
 
    ① 物理内存地址：硬件支持的地址空间，如主存（内存）和硬盘，由硬件完成管理和控制
    ② 逻辑内存地址：一个程序运行时所需要的内存范围。
@@ -79,7 +79,7 @@
 
 一段代码运行→编译→汇编语言→机器语言→产生链接文件→将硬盘中程序载入到内存当中运行（完成逻辑地址的分配）
 
-![image-20220425192353658](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous memory allocation/image-20220425192353658.png)
+![image-20220425192353658](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous%20memory%20allocation/image-20220425192353658.png)
 
  如C中变量的名字，函数的位置，为逻辑地址。
 
@@ -95,11 +95,11 @@
 - OS方面
    建立逻辑地址和物理地址之间的映射关系（需在前四部前将映射管理建立好）
 
-![image-20220425194557713](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous memory allocation/image-20220425194557713.png)
+![image-20220425194557713](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous%20memory%20allocation/image-20220425194557713.png)
 
 ### 4. 内存安全监测：检查运行的内存是否在对应内存空间范围内
 
-![image-20220425194611872](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous memory allocation/image-20220425194611872.png)
+![image-20220425194611872](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/images/ch3%20Contiguous%20memory%20allocation/image-20220425194611872.png)
 
 操作系统确保程序的有效访问的地址空间，==起始地址==与==长度==（基址寄存器和界限寄存器），也是操作系统所建立和维护的对应的表。
 
