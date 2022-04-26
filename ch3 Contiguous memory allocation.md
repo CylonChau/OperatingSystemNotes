@@ -9,7 +9,7 @@
 - CPU，完成程序的执行控制
 - 主存 （`main memory`），放置程序代码和数据
 - I/O（外）设备，配合程序工作。
-   ![image-20220425192206925](images\ch3%20Contiguous%20memory%20allocation\image-20220425192206925.png)
+   ![image-20220425192206925](https://raw.githubusercontent.com/CylonChau/OperatingSystemNotes/main/ch3%20Contiguous%20memory%20allocation/image-20220425192206925.png)
    2.内存分层体系（金字塔结构)
 
 什么是内存结构：CPU所访问的指令和数据在什么地方。
